@@ -9,6 +9,7 @@ import utils.Navigator;
 import utils.Utils;
 
 import java.util.LinkedList;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -18,7 +19,7 @@ public class ChallengeOne_TS extends TestBase {
         ChallengeOnePage challengeOnePage = Navigator.openChallengeOnePage(webDriver);
 
         verificationDataList.forEach(verificationData -> {
-            challengeOnePage.submitFormWithFirstNameValue(verificationData.getVerificationValue(), webDriver);
+            challengeOnePage.submitFormWithFirstNameValue(verificationData.getVerificationValue());
             Utils.waitWebElementIsVisible(webDriver, challengeOnePage.getVerificationCounterElement(), ChallengeOnePage.ELEMENT_WAIT_TIMEOUT);
 
             boolean containsDescription = challengeOnePage.verificationDescriptionsContains(verificationData.getVerificationDescription());
