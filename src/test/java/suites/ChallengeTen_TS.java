@@ -3,6 +3,7 @@ package suites;
 import base.TestBase;
 import entities.User;
 import org.testng.annotations.Test;
+import pages.ChallengeLoginPage;
 import pages.ChallengeTenPage;
 import utils.ChallengeTenUtils;
 import utils.Navigator;
@@ -17,5 +18,9 @@ public class ChallengeTen_TS extends TestBase {
         boolean userCreated = ChallengeTenUtils.userCreated(challengeTenPage.getUserTableCells(), user);
 
         assertTrue(userCreated);
+
+        ChallengeLoginPage challengeLoginPage = Navigator.openChallengeLoginPage(webDriver);
+
+        challengeLoginPage.loginWithCredentials(user);
     }
 }
