@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
@@ -22,15 +21,11 @@ public class ChallengeOnePage {
     @FindAll(@FindBy(xpath = "//ul[@class='values-description t10']/li"))
     List<WebElement> verificationDescriptions;
 
-    public WebElement getFirstNameInput() {
-        return firstNameInput;
-    }
-
     public WebElement getVerificationCounterElement() {
         return verificationCounter;
     }
 
-    public void submitFormWithFirstNameValue(String firstName, WebDriver webDriver) {
+    public void submitFormWithFirstNameValue(String firstName) {
         firstNameInput.sendKeys(firstName);
         submitBtn.click();
     }
