@@ -12,7 +12,7 @@ public class Navigator {
     private static final String CHALLENGE_ONE_URL = TESTING_CHALLENGE_URL.concat("/index.php");
     private static final String CHALLENGE_TEN_URL = TESTING_CHALLENGE_URL.concat("/challenge10.php");
     private static final String CHALLENGE_LOGIN_URL = TESTING_CHALLENGE_URL.concat("/login/login.php");
-    private static final String CHALLENGE_LOGIN_MAIN_URL = TESTING_CHALLENGE_URL.concat("/login/main.php");
+    public static final String CHALLENGE_LOGIN_MAIN_URL = TESTING_CHALLENGE_URL.concat("/login/main_page.php");
 
     public static ChallengeOnePage openChallengeOnePage(WebDriver webDriver) {
         webDriver.navigate().to(CHALLENGE_ONE_URL);
