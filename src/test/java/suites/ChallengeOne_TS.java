@@ -26,7 +26,7 @@ public class ChallengeOne_TS extends TestBase {
             boolean containsDescription = challengeOnePage.verificationDescriptionsContains(verificationData.getVerificationDescription());
 
             assertTrue(containsDescription, String.format("Failed verification: %s", verificationData.getVerificationDescription()));
-            assertEquals(challengeOnePage.getVerificationCounter(), verificationData.getVerificationCounter());
+            assertEquals(challengeOnePage.getVerificationCounter(), verificationData.getVerificationCounter(), String.format("Failed verification: %s", verificationData.getVerificationDescription()));
         });
     }
 }
