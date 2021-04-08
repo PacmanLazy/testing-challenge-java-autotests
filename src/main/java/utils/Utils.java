@@ -16,6 +16,10 @@ public class Utils {
         new WebDriverWait(webDriver, timeout).until(ExpectedConditions.visibilityOf(webElement));
     }
 
+    public static void waitWebElementValueIsEmpty(WebDriver webDriver, WebElement webElement, int timeout){
+        new WebDriverWait(webDriver, timeout).until(ExpectedConditions.textToBePresentInElementValue(webElement, ""));
+    }
+
     public static String generateRandomAlphaNumericString(int minLength, int maxLength){
         RandomStringGenerator stringGenerator = new RandomStringGenerator.Builder()
         .withinRange('0', 'z').filteredBy(CharacterPredicates.LETTERS, CharacterPredicates.DIGITS).build();

@@ -20,6 +20,7 @@ public class ChallengeOne_TS extends TestBase {
 
         verificationDataList.forEach(verificationData -> {
             challengeOnePage.submitFormWithFirstNameValue(verificationData.getVerificationValue());
+            Utils.waitWebElementValueIsEmpty(webDriver, challengeOnePage.getFirstNameInput(), ChallengeOnePage.ELEMENT_WAIT_TIMEOUT);
             Utils.waitWebElementIsVisible(webDriver, challengeOnePage.getVerificationCounterElement(), ChallengeOnePage.ELEMENT_WAIT_TIMEOUT);
 
             boolean containsDescription = challengeOnePage.verificationDescriptionsContains(verificationData.getVerificationDescription());

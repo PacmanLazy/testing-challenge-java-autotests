@@ -25,6 +25,10 @@ public class ChallengeOnePage {
         return verificationCounter;
     }
 
+    public WebElement getFirstNameInput() {
+        return firstNameInput;
+    }
+
     public void submitFormWithFirstNameValue(String firstName) {
         firstNameInput.sendKeys(firstName);
         submitBtn.click();
