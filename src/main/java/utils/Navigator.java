@@ -3,6 +3,7 @@ package utils;
 import config.Configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import pages.ChallengeFourPage;
 import pages.ChallengeLoginPage;
 import pages.ChallengeOnePage;
 import pages.ChallengeTenPage;
@@ -11,6 +12,7 @@ public class Navigator {
     private static final String TESTING_CHALLENGE_URL = Configuration.getConfigurationValue("url");
     private static final String CHALLENGE_ONE_URL = TESTING_CHALLENGE_URL.concat("/index.php");
     private static final String CHALLENGE_TEN_URL = TESTING_CHALLENGE_URL.concat("/challenge10.php");
+    private static final String CHALLENGE_FOUR_URL = TESTING_CHALLENGE_URL.concat("/challenge4.php");
     private static final String CHALLENGE_LOGIN_URL = TESTING_CHALLENGE_URL.concat("/login/login.php");
     public static final String CHALLENGE_LOGIN_MAIN_URL = TESTING_CHALLENGE_URL.concat("/login/main_page.php");
 
@@ -27,5 +29,10 @@ public class Navigator {
     public static ChallengeLoginPage openChallengeLoginPage(WebDriver webDriver) {
         webDriver.navigate().to(CHALLENGE_LOGIN_URL);
         return PageFactory.initElements(webDriver, ChallengeLoginPage.class);
+    }
+
+    public static ChallengeFourPage openChallengeFourPage(WebDriver webDriver) {
+        webDriver.navigate().to(CHALLENGE_FOUR_URL);
+        return PageFactory.initElements(webDriver, ChallengeFourPage.class);
     }
 }
